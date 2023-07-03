@@ -1,0 +1,15 @@
+def merge(l1, l2):
+    l = l1 + l2
+    result = []
+    
+    while len(l) > 0:
+        minimum = min(l)
+        result.append(minimum)
+        l.remove(minimum)
+    
+    return result
+
+l3 = [5, 9, 7, 3, 6, 4, 9, 8, 7, 3, 6, 5, 4, 23, 12, 56, 80]
+l4 = [23, 9, 63, 163, 12, 20, 30, 15, 5]
+
+print(merge(l3, l4))
