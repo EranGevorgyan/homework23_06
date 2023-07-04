@@ -1,0 +1,31 @@
+miavor = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"]
+tas = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]
+tiv = int(input('Enter an integer: '))
+
+if tiv == 10:
+    print(miavor[10])
+elif 0 < tiv < 10:
+    print(miavor[tiv])
+elif 10 < tiv < 20:
+    print(miavor[tiv])
+elif 19 < tiv < 100:
+    print(tas[tiv//10] + '_'+ miavor[tiv %10])
+    
+
+def haz(num):
+    if num % 100 == 0:
+        return miavor[num // 100] + ' Hundred'
+    elif num % 10 == 0:
+        return miavor[num // 100] + ' Hundred ' + tas[num % 100 // 10]
+    elif 10 < num % 100 < 20:
+        return miavor[num // 100] + ' Hundred ' + miavor[num % 100]
+    else:
+        return miavor[num // 100] + ' Hundred ' + tas[num % 100 // 10] + '-' + miavor[num % 100 % 10]
+if 100 < tiv < 1000:
+    result = haz(tiv)
+    print(result)
+elif tiv == 1000:
+    print("One Thousand")
+elif 1000 < tiv < 10000:
+    x = haz(tiv % 1000)
+    print(miavor[tiv // 1000] + ' Thousand ' + x)
