@@ -1,0 +1,8 @@
+
+def outer_function(x):
+    def inner_function(a):
+        return x * a
+
+    return inner_function
+
+print(outer_function(3)(12))
